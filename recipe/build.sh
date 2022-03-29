@@ -2,7 +2,7 @@
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/libtool/build-aux/config.* .
 
-./autogen.sh
+SED=`which sed` GREP=`which grep` ./autogen.sh
 
 # Define TRUE/FALSE via preprocessor flags for now (until upstream fixes it).
 # (Some (non-header) source files use them but not define them or include <stdbool.h> .)
